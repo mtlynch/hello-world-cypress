@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  sentiment_guesser:
+    build: ../
+    environment:
+      - PORT=8123
+    ports:
+      - "8123:8123"
+  cypress:
+    image: "mtlynch/cypress:3.2.0"
+    depends_on:
+      - sentiment_guesser
+    environment:
+      - CYPRESS_baseUrl=http://sentiment_guesser:8123
+    command: cypress run
+    working_dir: /app
+    volumes:
+      - ./cypress/cypress:/app/cypress
+      - ./cypress/cypress.json:/app/cypress.json
