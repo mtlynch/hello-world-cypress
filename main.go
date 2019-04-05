@@ -28,26 +28,26 @@ func main() {
 func AnalyzePage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprint(w, `
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Sentimentalyzer</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container">
-			<p>Welcome to Sentimentalyzer, the world's simplest sentiment analyzer!</p>
-			<form action="/results" method="post">
-				<div class="form-group">
-					<label for="feelings">How are you feeling?</label>
-					<textarea class="form-control" rows="5" name="feelings" id="feelings"></textarea>
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</div>
-	</body>
-	</html>
-	`)
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Sentimentalyzer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <p>Welcome to Sentimentalyzer, the world's simplest sentiment analyzer!</p>
+      <form action="/results" method="post">
+        <div class="form-group">
+          <label for="feelings">How are you feeling?</label>
+          <textarea class="form-control" rows="5" name="feelings" id="feelings"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+  </html>
+  `)
 }
 
 func ResultsPage(w http.ResponseWriter, r *http.Request) {
@@ -57,20 +57,20 @@ func ResultsPage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	err = template.Must(template.New("T").Parse(`
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Sentimentalyzer</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container">
-			<h1>Results</h1>
-			<p id="results">You are feeling: <b>{{.Sentiment}}</b></p>
-		</div>
-	</body>
-	</html>
-	`)).Execute(w, ResultsPageVars)
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Sentimentalyzer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Results</h1>
+      <p id="results">You are feeling: <b>{{.Sentiment}}</b></p>
+    </div>
+  </body>
+  </html>
+  `)).Execute(w, ResultsPageVars)
 	if err != nil {
 		log.Print("Error generating page: ", err)
 	}
