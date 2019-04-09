@@ -1,6 +1,6 @@
 version: '3.2'
 services:
-  sentiment_guesser:
+  sentimentalyzer:
     build: ../
     environment:
       - PORT=8123
@@ -9,9 +9,9 @@ services:
   cypress:
     image: "mtlynch/cypress:3.2.0"
     depends_on:
-      - sentiment_guesser
+      - sentimentalyzer
     environment:
-      - CYPRESS_baseUrl=http://sentiment_guesser:8123
+      - CYPRESS_baseUrl=http://sentimentalyzer:8123
     command: cypress run
     working_dir: /app
     volumes:
