@@ -18,7 +18,7 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	log.Printf("Listening on port %s\n", port)
+	log.Printf("Listening on port %s", port)
 	http.HandleFunc("/", AnalyzePage)
 	http.HandleFunc("/analyze", AnalyzePage)
 	http.HandleFunc("/results", ResultsPage)
@@ -78,8 +78,8 @@ func ResultsPage(w http.ResponseWriter, r *http.Request) {
 
 func detectSentiment(feelings string) string {
 	cu := countUpperCaseCharacters(feelings)
-	c_tot := countLetters(feelings)
-	if float64(cu)/float64(c_tot) > 0.5 {
+	cTot := countLetters(feelings)
+	if float64(cu)/float64(cTot) > 0.5 {
 		return "Angry"
 	} else {
 		return "Content"
@@ -90,7 +90,7 @@ func countUpperCaseCharacters(str string) int {
 	count := 0
 	for _, c := range str {
 		if unicode.IsUpper(c) {
-			count += 1
+			count++
 		}
 	}
 	return count
@@ -100,7 +100,7 @@ func countLetters(str string) int {
 	count := 0
 	for _, c := range str {
 		if unicode.IsLetter(c) {
-			count += 1
+			count++
 		}
 	}
 	return count
