@@ -15,5 +15,7 @@ services:
     command: cypress run
     working_dir: /app
     volumes:
-      - ./cypress/cypress:/app/cypress
-      - ./cypress/cypress.json:/app/cypress.json
+      - ./cypress:/app/cypress
+      # Traverse in and out of the e2e directory so that docker-compose will
+      # mount a single file as a volume.
+      - ../e2e/cypress.json:/app/cypress.json
