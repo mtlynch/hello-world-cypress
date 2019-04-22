@@ -12,7 +12,6 @@ services:
       - sentimentalyzer
     environment:
       - CYPRESS_baseUrl=http://sentimentalyzer:8123
-    command: cypress run
     working_dir: /app
     volumes:
       - ./cypress:/app/cypress
