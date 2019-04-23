@@ -18,8 +18,14 @@ The app will be running on [localhost:8999](http://localhost:8999).
 
 ```bash
 cd e2e
-docker-compose up \
-  --build \
-  --abort-on-container-exit \
-  --exit-code-from cypress
+docker-compose up --exit-code-from cypress
 ```
+
+## Other branches
+
+This repo contains several branches to demonstrate different Cypress scenarios:
+
+* [Basic Cypress example](https://github.com/mtlynch/hello-world-cypress)
+* [Using Cypress with Chrome browser](https://github.com/mtlynch/hello-world-cypress/tree/chrome)
+* [Running Cypress from within Circle CI](https://github.com/mtlynch/hello-world-cypress/tree/circle)
+* [Running Cypress from within Travis CI](https://github.com/mtlynch/hello-world-cypress/tree/travis)
