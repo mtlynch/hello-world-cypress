@@ -4,8 +4,6 @@ services:
     build: ../
     environment:
       - PORT=8123
-    ports:
-      - "8123:8123"
   cypress:
     image: "mtlynch/cypress:3.2.0"
     depends_on:
