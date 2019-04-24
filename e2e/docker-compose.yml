@@ -10,6 +10,6 @@ services:
       - sentimentalyzer
     environment:
       - CYPRESS_baseUrl=http://sentimentalyzer:8123
-    working_dir: /app
+    working_dir: /e2e
     volumes:
-      - ./:/app
+      - ./:/e2e
