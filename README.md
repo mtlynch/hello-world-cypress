@@ -1,10 +1,16 @@
 # hello-world-cypress
 
+[![CircleCI](https://circleci.com/gh/mtlynch/hello-world-cypress/tree/circle.svg?style=svg)](https://circleci.com/gh/mtlynch/hello-world-cypress/tree/circle)
+
 ## Overview
 
-This repo shows a basic example of using Cypress and Docker Compose to create simple end-to-end tests for any web application. This example uses a Go application, but you can reuse the pattern in this repository for any web application that can run in Docker.
+This branch demonstrates how to run [Cypress](https://cypress.io) end-to-end tests in [Circle CI](https://circleci.com). The file [`.circleci/config.yml`](https://github.com/mtlynch/hello-world-cypress/blob/circle/.circleci/config.yml) defines a basic Circle CI configuration.
 
-For more information, see the blog post, ["Easy End-to-End Testing with Cypress."](https://mtlynch.io/easy-cypress/)
+One excellent feature of Circle CI is that it makes the screenshot and video outputs from your Cypress tests available right in the Circle CI web dashboard:
+
+![circle-ci-artifact](https://user-images.githubusercontent.com/7783288/56669425-20484e00-667f-11e9-8424-7c05b2e507ee.jpg)
+
+For the basic demo without continuous integration, see the [`master` branch](https://github.com/mtlynch/hello-world-cypress).
 
 ## Run the test app
 
