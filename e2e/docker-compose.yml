@@ -12,7 +12,4 @@ services:
       - CYPRESS_baseUrl=http://sentimentalyzer:8123
     working_dir: /app
     volumes:
-      - ./cypress:/app/cypress
-      # Traverse in and out of the e2e directory so that docker-compose will
-      # mount a single file as a volume.
-      - ../e2e/cypress.json:/app/cypress.json
+      - ./:/app
