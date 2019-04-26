@@ -1,0 +1,6 @@
+sudo: required
+services:
+  - docker
+script: |
+  cd e2e && \
+  docker-compose up --exit-code-from cypress

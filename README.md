@@ -1,10 +1,12 @@
 # hello-world-cypress
 
+[![Build Status](https://travis-ci.org/mtlynch/hello-world-cypress.svg?branch=travis)](https://travis-ci.org/mtlynch/hello-world-cypress)
+
 ## Overview
 
-This repo shows a basic example of using Cypress and Docker Compose to create simple end-to-end tests for any web application. This example uses a Go application, but you can reuse the pattern in this repository for any web application that can run in Docker.
+This branch demonstrates how to run Cypress end-to-end tests in [Travis CI](https://circleci.com). The file [ `.travis.yml`](https://github.com/mtlynch/hello-world-cypress/blob/travis/.travis.yml) defines a basic Travis CI configuration that executes the end-to-end tests with Cypress. You can view [recent test runs in Travis](https://travis-ci.org/mtlynch/hello-world-cypress).
 
-For more information, see the blog post, ["Easy End-to-End Testing with Cypress."](https://mtlynch.io/easy-cypress/)
+For the basic demo without continuous integration, see the [`master` branch](https://github.com/mtlynch/hello-world-cypress).
 
 ## Run the test app
 
