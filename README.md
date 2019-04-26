@@ -2,9 +2,26 @@
 
 ## Overview
 
-This repo shows a basic example of using Cypress and Docker Compose to create simple end-to-end tests for any web application. This example uses a Go application, but you can reuse the pattern in this repository for any web application that can run in Docker.
+This branch demonstrates how to run Cypress end-to-end tests in using Google Chrome.
 
-For more information, see the blog post, ["Easy End-to-End Testing with Cypress."](https://mtlynch.io/easy-cypress/)
+Testing with Chrome requires only a small change to the [`e2e/docker-compose.yml` file](https://github.com/mtlynch/hello-world-cypress/blob/chrome/e2e/docker-compose.yml):
+
+```diff
+  cypress:
+-    image: "mtlynch/cypress:3.2.0"
++    image: "mtlynch/cypress:3.2.0-chrome69"
++    command: ["--browser", "chrome"]
+```
+
+It uses the `mtlynch/cypress:3.2.0-chrome69` Docker image, which has the Chrome browser pre-installed, and it appends `--browser chrome` to the [entrypoint command](https://github.com/mtlynch/docker-cypress/blob/09a44838c13bc9b7fe7badd48f4cbef9654f78c7/Dockerfile#L11) of the image, making the complete entrypoint:
+
+```bash
+cypress run --browser chrome
+```
+
+**Note**: Cypress does not save video recordings when running under Chrome, but it does save screenshots on failure.
+
+For the basic demo using Electron, Cypress' default browser, see the [`master` branch](https://github.com/mtlynch/hello-world-cypress).
 
 ## Run the test app
 
