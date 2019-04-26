@@ -1,6 +1,6 @@
 # hello-world-cypress
 
-# Overview
+## Overview
 
 This repo shows a basic example of using Cypress and Docker Compose to create simple end-to-end tests for any web application. This example uses a Go application, but you can reuse the pattern in this repository for any web application that can run in Docker.
 
