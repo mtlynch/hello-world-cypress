@@ -1,7 +1,8 @@
 version: 2.1
 jobs:
   e2e:
-    machine: true
+    docker:
+      - image: circleci/golang:1.12.2
     steps:
       - checkout
       - run:
