@@ -6,6 +6,9 @@ services:
       - PORT=8123
   cypress:
     image: "cypress/included:3.2.0"
+    # pass custom command to start Cypress
+    # otherwise it will use the entrypoint specified in the Cypress Docker image
+    entrypoint: cypress open
     depends_on:
       - sentimentalyzer
     environment:
