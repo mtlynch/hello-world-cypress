@@ -11,8 +11,9 @@ For more information, see the blog post, ["Easy End-to-End Testing with Cypress.
 The example application is called Sentimentalyzer, a very rudimentary text sentiment analyzer. To run it, enter the following commands:
 
 ```bash
-docker build --tag sentimentalyzer .
-docker run \
+docker build --tag sentimentalyzer . && docker image prune -f --filter label=stage=hw-builder
+docker run -d\
+  --name="cypress-hw" \
   --interactive \
   --tty \
   --env PORT=8999 \
@@ -37,9 +38,9 @@ When the command completes, you will see test output on the console and a video 
 
 This repo contains several branches to demonstrate different Cypress scenarios:
 
-| Scenario | Branch |
-|----------|---------|
-| [Basic Cypress example](https://github.com/mtlynch/hello-world-cypress) | [`master`](https://github.com/mtlynch/hello-world-cypress) |
-| [Using Cypress with Chrome browser](https://github.com/mtlynch/hello-world-cypress/tree/chrome) | [`chrome`](https://github.com/mtlynch/hello-world-cypress/tree/chrome) |
+| Scenario                                                                                            | Branch                                                                 |
+| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [Basic Cypress example](https://github.com/mtlynch/hello-world-cypress)                             | [`master`](https://github.com/mtlynch/hello-world-cypress)             |
+| [Using Cypress with Chrome browser](https://github.com/mtlynch/hello-world-cypress/tree/chrome)     | [`chrome`](https://github.com/mtlynch/hello-world-cypress/tree/chrome) |
 | [Running Cypress from within Circle CI](https://github.com/mtlynch/hello-world-cypress/tree/circle) | [`circle`](https://github.com/mtlynch/hello-world-cypress/tree/circle) |
 | [Running Cypress from within Travis CI](https://github.com/mtlynch/hello-world-cypress/tree/travis) | [`travis`](https://github.com/mtlynch/hello-world-cypress/tree/travis) |
