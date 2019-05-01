@@ -9,7 +9,7 @@ it('detects angry sentiment', () => {
     .should('contain', 'You are feeling: Angry')
 })
 
-it('detects content sentiment', () => {
+it('detects content sentiment 😁', () => {
   cy.visit('/analyze')
 
   cy.get('#feelings')
