@@ -5,7 +5,6 @@ services:
     environment:
       - PORT=8123
   cypress:
-    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
     image: "cypress/included:3.2.0"
     # pass custom command to start Cypress otherwise it will use the entrypoint
     # specified in the Cypress Docker image.
