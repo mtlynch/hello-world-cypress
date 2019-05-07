@@ -43,3 +43,4 @@ This repo contains several branches to demonstrate different Cypress scenarios:
 | [Using Cypress with Chrome browser](https://github.com/mtlynch/hello-world-cypress/tree/chrome) | [`chrome`](https://github.com/mtlynch/hello-world-cypress/tree/chrome) |
 | [Running Cypress from within Circle CI](https://github.com/mtlynch/hello-world-cypress/tree/circle) | [`circle`](https://github.com/mtlynch/hello-world-cypress/tree/circle) |
 | [Running Cypress from within Travis CI](https://github.com/mtlynch/hello-world-cypress/tree/travis) | [`travis`](https://github.com/mtlynch/hello-world-cypress/tree/travis) |
+| [Running Cypress in interactive mode](https://github.com/mtlynch/hello-world-cypress/tree/interactive) | [`interactive`](https://github.com/mtlynch/hello-world-cypress/tree/interactive) |
