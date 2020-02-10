@@ -15,12 +15,12 @@ docker build --tag sentimentalyzer .
 docker run \
   --interactive \
   --tty \
-  --env PORT=8999 \
-  --publish 8999:8999 \
+  --env PORT=8123 \
+  --publish 8123:8123 \
   sentimentalyzer
 ```
 
-The app will be running on [localhost:8999](http://localhost:8999).
+The app will be running on [localhost:8123](http://localhost:8123).
 
 ## Run end-to-end tests
 
