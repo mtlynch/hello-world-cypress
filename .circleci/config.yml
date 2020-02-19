@@ -1,7 +1,11 @@
 version: 2.1
 jobs:
   e2e:
-    machine: true
+    machine:
+      # Choose an explicit machine image so that we get the latest version of
+      # docker-compose. Circle's default version won't fail if the target app
+      # fails to build.
+      image: ubuntu-1604:201903-01
     steps:
       - checkout
       - run:
