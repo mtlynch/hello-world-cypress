@@ -2,9 +2,23 @@
 
 ## Overview
 
-This repo shows a basic example of using Cypress and Docker Compose to create simple end-to-end tests for any web application. This example uses a Go application, but you can reuse the pattern in this repository for any web application that can run in Docker.
+This branch demonstrates how to run Cypress end-to-end tests using Firefox.
 
-For more information, see the blog post, ["Easy End-to-End Testing with Cypress."](https://mtlynch.io/painless-web-app-testing)
+Testing with Firefox requires only a small change to the [`e2e/docker-compose.yml` file](https://github.com/mtlynch/hello-world-cypress/blob/chrome/e2e/docker-compose.yml):
+
+```diff
+  cypress:
+     image: "cypress/cypress:4.4.0"
++    command: ["--browser", "firefox"]
+```
+
+It uses the `cypress/included:4.4.0` Docker image, which has the Firefox browser pre-installed, and it appends `--browser firefox` to the entrypoint command of the image, making the complete entrypoint:
+
+```bash
+cypress run --browser firefox
+```
+
+For the basic demo using Electron, Cypress' default browser, see the [`master` branch](https://github.com/mtlynch/hello-world-cypress).
 
 ## Run the test app
 
