@@ -8,12 +8,11 @@ Testing with Chrome requires only a small change to the [`e2e/docker-compose.yml
 
 ```diff
   cypress:
--    image: "mtlynch/cypress:3.2.0"
-+    image: "mtlynch/cypress:3.2.0-chrome69"
+     image: "cypress/included:4.4.0"
 +    command: ["--browser", "chrome"]
 ```
 
-It uses the `mtlynch/cypress:3.2.0-chrome69` Docker image, which has the Chrome browser pre-installed, and it appends `--browser chrome` to the [entrypoint command](https://github.com/mtlynch/docker-cypress/blob/09a44838c13bc9b7fe7badd48f4cbef9654f78c7/Dockerfile#L11) of the image, making the complete entrypoint:
+It uses the `cypress/included:4.4.0` Docker image, which has the Chrome browser pre-installed, and it appends `--browser chrome` to the [entrypoint command](https://github.com/mtlynch/docker-cypress/blob/09a44838c13bc9b7fe7badd48f4cbef9654f78c7/Dockerfile#L11) of the image, making the complete entrypoint:
 
 ```bash
 cypress run --browser chrome
