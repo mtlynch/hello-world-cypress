@@ -24,7 +24,7 @@ The app will be running on [localhost:8123](http://localhost:8123).
 
 ## Run end-to-end tests
 
-To execute the end-to-end tests for Sentimentalyzer, enter the followinng commands:
+To execute the end-to-end tests for Sentimentalyzer, enter the following commands:
 
 ```bash
 cd e2e
