@@ -28,7 +28,7 @@ To execute the end-to-end tests for Sentimentalyzer, enter the following command
 
 ```bash
 cd e2e
-docker-compose up --exit-code-from cypress
+docker-compose up --exit-code-from --abort-on-container-exit cypress
 ```
 
 When the command completes, you will see test output on the console and a video of the test run will appear in the folder `e2e/cypress/integration/videos`.
